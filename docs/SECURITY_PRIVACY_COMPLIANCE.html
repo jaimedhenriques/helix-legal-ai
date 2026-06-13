@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security Privacy Compliance</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; max-width: 940px; margin: 40px auto; padding: 0 24px; color: #172033; }
+h1 { border-bottom: 2px solid #172033; padding-bottom: 12px; }
+h2 { margin-top: 32px; color: #27324a; }
+h3 { margin-top: 24px; color: #3b4761; }
+code { background: #f4f6f8; padding: 2px 5px; border-radius: 4px; }
+pre { background: #f4f6f8; padding: 14px; overflow: auto; border-radius: 8px; }
+li { margin: 5px 0; }
+hr { margin: 32px 0; border: none; border-top: 1px solid #d7dce2; }
+</style>
+</head>
+<body>
+<h1>Helix Legal AI — Security, Privacy, and Compliance Package</h1>
+<h2>Executive posture</h2>
+<p>Helix Legal AI should be positioned as a governed legal workflow product for legal professionals, not as a substitute attorney. The product must assume legal documents are sensitive, potentially privileged, commercially confidential, and sometimes regulated.</p>
+<h2>Core risk principles</h2>
+<ul>
+<li>Human legal review before final legal output.</li>
+<li>Least-privilege access to matters and documents.</li>
+<li>Workspace/customer isolation.</li>
+<li>Clear data retention and deletion controls.</li>
+<li>No training on customer data unless explicitly agreed in writing.</li>
+<li>Source-grounded outputs and audit logging.</li>
+<li>Conservative handling of regulated data and privileged materials.</li>
+</ul>
+<h2>Data classification</h2>
+<h3>Restricted</h3>
+<ul>
+<li>Attorney-client privileged materials.</li>
+<li>Non-public contracts and negotiation positions.</li>
+<li>Personal data in contracts, HR, employment, or privacy documents.</li>
+<li>Security questionnaires, DPAs, customer/vendor confidential information.</li>
+<li>Litigation or regulatory investigation materials.</li>
+</ul>
+<h3>Confidential</h3>
+<ul>
+<li>Playbooks, fallback language, templates, company policies.</li>
+<li>Internal legal intake notes.</li>
+<li>Matter metadata.</li>
+</ul>
+<h3>Public/sample</h3>
+<ul>
+<li>Public SEC contracts.</li>
+<li>Sanitized templates.</li>
+<li>Demo documents.</li>
+</ul>
+<h2>Recommended data flow</h2>
+<p>1. User authenticates into workspace.</p>
+<p>2. User uploads document.</p>
+<p>3. System stores encrypted original and extracted text.</p>
+<p>4. Text extraction pipeline normalizes content.</p>
+<p>5. AI analysis runs with customer-selected playbook and template.</p>
+<p>6. Output is stored as draft work product.</p>
+<p>7. Legal reviewer accepts/edits/rejects findings.</p>
+<p>8. Approved output is exported.</p>
+<p>9. Audit log records upload, analysis, review, approval, export, deletion.</p>
+<h2>Required controls for MVP</h2>
+<h3>Identity and access</h3>
+<ul>
+<li>Workspace-based tenancy.</li>
+<li>Role-based permissions: admin, legal reviewer, requester/viewer.</li>
+<li>Strong password/auth provider support.</li>
+<li>Optional SSO in later enterprise tier.</li>
+<li>Session timeout and access revocation.</li>
+</ul>
+<h3>Data protection</h3>
+<ul>
+<li>TLS for data in transit.</li>
+<li>Encryption at rest for documents and derived text.</li>
+<li>Separate storage namespaces per customer/workspace.</li>
+<li>Secrets managed outside source code.</li>
+<li>Signed URLs or equivalent short-lived access for downloads.</li>
+</ul>
+<h3>Retention and deletion</h3>
+<ul>
+<li>Configurable retention window per workspace.</li>
+<li>Delete original document, extracted text, AI outputs, and exports on request unless legally required to retain.</li>
+<li>Admin-visible deletion status.</li>
+</ul>
+<h3>Model/vendor controls</h3>
+<ul>
+<li>Use API terms appropriate for third-party products; do not route customer workloads through consumer accounts.</li>
+<li>Document whether model provider stores prompts/outputs and whether zero data retention or equivalent is enabled.</li>
+<li>Keep model name/version and prompt/template version in audit log.</li>
+<li>Block use of customer data for model training unless explicitly contracted.</li>
+</ul>
+<h3>Auditability</h3>
+<ul>
+<li>Log matter creation, upload, analysis run, prompt/template version, playbook version, reviewer actions, approval, export, deletion.</li>
+<li>Preserve source snippets supporting each finding where feasible.</li>
+<li>Maintain immutable or tamper-evident audit exports for pilots.</li>
+</ul>
+<h2>AI governance controls</h2>
+<ul>
+<li>Structured output schema with validation.</li>
+<li>Required “not specified” for absent facts.</li>
+<li>Confidence/severity labels are advisory, not determinative.</li>
+<li>Source snippets/citations for material claims.</li>
+<li>Reviewer decision capture for each issue.</li>
+<li>Regression tests on a fixed contract set before prompt/model changes.</li>
+<li>Change log for prompts, playbooks, and model versions.</li>
+</ul>
+<h2>Legal/professional responsibility posture</h2>
+<p>Helix Legal AI should include clear customer-facing terms:</p>
+<ul>
+<li>The product provides AI-assisted drafting, summarization, classification, and workflow support.</li>
+<li>It does not provide legal advice to end users by itself.</li>
+<li>Outputs must be reviewed by qualified legal professionals before reliance or external use.</li>
+<li>Customers are responsible for professional judgment, legal advice, and final work product.</li>
+<li>The system may make mistakes, omit issues, or misclassify clauses.</li>
+</ul>
+<h2>Unauthorized practice of law mitigation</h2>
+<ul>
+<li>Sell to legal teams, firms, or businesses using their own counsel.</li>
+<li>Avoid direct-to-consumer legal advice workflows.</li>
+<li>Require approved reviewer for final outputs.</li>
+<li>Avoid claims like “automated lawyer,” “legal advice without counsel,” or “guaranteed compliance.”</li>
+<li>Maintain disclaimers in UI and contracts.</li>
+</ul>
+<h2>Privacy checklist</h2>
+<ul>
+<li>Privacy notice updated for document processing.</li>
+<li>DPA template prepared for business customers.</li>
+<li>Subprocessor list prepared.</li>
+<li>Data residency stance documented if applicable.</li>
+<li>DSAR/deletion process documented for personal data.</li>
+<li>Breach notification process documented.</li>
+<li>DPIA/LIA template for EU/UK customers if processing personal data at scale.</li>
+</ul>
+<h2>Security review questions to answer before pilots</h2>
+<ul>
+<li>Where are documents stored?</li>
+<li>Who can access customer documents?</li>
+<li>Are prompts/outputs retained by model providers?</li>
+<li>Is customer data used to train models?</li>
+<li>Can a customer delete all documents and derived data?</li>
+<li>Are audit logs exportable?</li>
+<li>Is SSO available or planned?</li>
+<li>What happens if the model produces incorrect output?</li>
+<li>Is there incident response coverage?</li>
+<li>What subprocessors are used?</li>
+</ul>
+<h2>Pilot risk matrix</h2>
+<h3>Hallucinated legal issue</h3>
+<ul>
+<li>Likelihood: medium.</li>
+<li>Impact: high if relied upon without review.</li>
+<li>Mitigation: source snippets, reviewer approval, disclaimers, regression tests.</li>
+</ul>
+<h3>Missed material clause</h3>
+<ul>
+<li>Likelihood: medium.</li>
+<li>Impact: high.</li>
+<li>Mitigation: checklist-based extraction, playbook coverage, negative test cases, reviewer review.</li>
+</ul>
+<h3>Privileged/confidential data leakage</h3>
+<ul>
+<li>Likelihood: low with controls; high impact.</li>
+<li>Impact: critical.</li>
+<li>Mitigation: encryption, access controls, no training, vendor review, limited pilot data.</li>
+</ul>
+<h3>Customer misuse by non-lawyers</h3>
+<ul>
+<li>Likelihood: medium.</li>
+<li>Impact: high.</li>
+<li>Mitigation: role controls, approval gates, UX warnings, contractual restrictions.</li>
+</ul>
+<h3>Regulatory/privacy breach</h3>
+<ul>
+<li>Likelihood: low/medium depending data.</li>
+<li>Impact: high.</li>
+<li>Mitigation: avoid sensitive regulated data in early pilots, DPA, retention/deletion, subprocessor review.</li>
+</ul>
+<h2>Minimum launch gates</h2>
+<ul>
+<li>Security/privacy owner signs off on data flow and vendor terms.</li>
+<li>Counsel/advisor signs off on disclaimers and UPL posture.</li>
+<li>Product enforces human approval before final export.</li>
+<li>Audit log exists and is testable.</li>
+<li>Pilot customers receive security FAQ, DPA, and acceptable-use boundaries.</li>
+</ul>
+<hr>
+<p>Document owner: Helix Labs / Helix Legal AI  </p>
+<p>Status: Draft for founder, counsel, and pilot-customer review  </p>
+<p>Last updated: 2026-05-12</p>
+</body>
+</html>

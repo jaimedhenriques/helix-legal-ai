@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Brief</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; max-width: 940px; margin: 40px auto; padding: 0 24px; color: #172033; }
+h1 { border-bottom: 2px solid #172033; padding-bottom: 12px; }
+h2 { margin-top: 32px; color: #27324a; }
+h3 { margin-top: 24px; color: #3b4761; }
+code { background: #f4f6f8; padding: 2px 5px; border-radius: 4px; }
+pre { background: #f4f6f8; padding: 14px; overflow: auto; border-radius: 8px; }
+li { margin: 5px 0; }
+hr { margin: 32px 0; border: none; border-top: 1px solid #d7dce2; }
+</style>
+</head>
+<body>
+<h1>Helix Legal AI — Product Brief</h1>
+<h2>One-line positioning</h2>
+<p>Helix Legal AI is an AI workbench for lean in-house legal teams and boutique firms that turns contracts, policies, and matter documents into structured first-pass review, redlines, risk memos, and lawyer-ready workflows with auditable human approval gates.</p>
+<h2>Problem</h2>
+<p>Legal teams lose high-leverage hours to routine document work:</p>
+<ul>
+<li>First-pass contract review and clause extraction.</li>
+<li>NDA, MSA, DPA, vendor agreement, and policy comparison.</li>
+<li>Repetitive drafting and redlining against playbooks.</li>
+<li>Summarizing long document sets for commercial, regulatory, or litigation context.</li>
+<li>Translating business questions into legal triage without losing confidentiality, auditability, or professional responsibility controls.</li>
+</ul>
+<p>The core pain is not “lawyers need chat.” The pain is that legal teams need reliable, reviewable work product that fits existing approval workflows.</p>
+<h2>Target ICP</h2>
+<h3>Primary ICP: lean in-house legal teams</h3>
+<ul>
+<li>Company size: 100–2,000 employees.</li>
+<li>Legal team: 1–15 lawyers/legal ops staff.</li>
+<li>Sectors: B2B SaaS, fintech-adjacent, healthcare-adjacent non-PHI pilots, marketplaces, agencies, venture-backed services.</li>
+<li>Trigger events: sales cycle pressure, vendor security backlog, new procurement process, rapid fundraising/M&amp;A prep, privacy program catch-up.</li>
+<li>Buyer: General Counsel, Head of Legal, Legal Ops, COO at smaller companies.</li>
+<li>Champion: legal ops manager, commercial counsel, contracts manager.</li>
+<li>Budget owner: GC/COO/CFO.</li>
+</ul>
+<h3>Secondary ICP: boutique commercial/privacy firms</h3>
+<ul>
+<li>Firm size: 5–50 lawyers.</li>
+<li>Practice areas: commercial contracts, privacy, employment handbooks, startup counsel, legal ops consulting.</li>
+<li>Use case: standardize first-pass analysis and produce client-ready issue lists faster.</li>
+</ul>
+<h2>Beachhead use cases</h2>
+<p>1. <strong>Contract first-pass review</strong></p>
+<p>   - Upload NDA/MSA/DPA/vendor agreement.</p>
+<p>   - Extract parties, term, renewal, liability, indemnity, data protection, governing law, assignment, termination, unusual clauses.</p>
+<p>   - Compare against a client playbook.</p>
+<p>   - Return risk table, clause-by-clause notes, and suggested redline language.</p>
+<p>2. <strong>Legal intake triage</strong></p>
+<p>   - Business user submits request and documents.</p>
+<p>   - System classifies matter type, urgency, missing information, and approval path.</p>
+<p>   - Lawyer receives concise briefing pack.</p>
+<p>3. <strong>Policy/document summarization</strong></p>
+<p>   - Turn long legal docs into consistent structured summaries.</p>
+<p>   - Require “not specified” for missing facts and citations/snippets for source grounding.</p>
+<p>4. <strong>Deal desk support</strong></p>
+<p>   - Sales/legal alignment around standard fallback positions.</p>
+<p>   - Produce negotiation memo with business risk tags.</p>
+<h2>Competitive wedge</h2>
+<p>Helix Legal AI should not compete head-on as another generic legal chatbot. The wedge is:</p>
+<ul>
+<li><strong>Workflow-first, not prompt-first:</strong> intake, playbooks, approvals, evidence, and export are the product.</li>
+<li><strong>Human-in-the-loop by default:</strong> no final legal advice leaves the system without named legal reviewer approval.</li>
+<li><strong>Structured output over narrative answers:</strong> consistent extract fields, issue severity, fallback language, “not specified” handling, confidence labels.</li>
+<li><strong>Small-team speed:</strong> implementation measured in days, not enterprise procurement quarters.</li>
+<li><strong>Private playbook memory:</strong> customer-specific clause rules and fallback language, versioned and approved.</li>
+<li><strong>Audit-ready:</strong> matter log, prompt/version trace, model/version trace, source snippets, reviewer decisions.</li>
+</ul>
+<h2>Competitive context</h2>
+<p>Likely adjacent products include:</p>
+<ul>
+<li>Contract lifecycle management suites with AI add-ons.</li>
+<li>Legal AI assistants focused on research or drafting.</li>
+<li>Document review and eDiscovery platforms.</li>
+<li>Generic enterprise LLM copilots.</li>
+<li>Specialist contract review tools.</li>
+</ul>
+<p>Helix’s market entry should emphasize “legal ops automation for teams that cannot wait for a CLM rebuild.”</p>
+<h2>MVP scope</h2>
+<h3>Must-have</h3>
+<ul>
+<li>Secure document upload for PDF/DOCX/TXT.</li>
+<li>Text extraction and normalized matter workspace.</li>
+<li>Contract summary template with consistent sections.</li>
+<li>Clause extraction and risk issue list.</li>
+<li>Playbook comparison for one agreement type, starting with NDA or MSA.</li>
+<li>Reviewer approval workflow: draft → legal review → approved/exported.</li>
+<li>Export: PDF/Docx-style memo or Markdown/HTML briefing.</li>
+<li>Admin controls: workspace, users, roles, data retention settings.</li>
+<li>Basic audit log.</li>
+</ul>
+<h3>Should-have</h3>
+<ul>
+<li>Clause library and fallback text.</li>
+<li>Versioned playbooks.</li>
+<li>Source citations/snippets.</li>
+<li>Matter tags and searchable history.</li>
+<li>Slack/email intake.</li>
+</ul>
+<h3>Explicitly out of MVP</h3>
+<ul>
+<li>Autonomous legal advice to non-lawyers.</li>
+<li>Litigation strategy recommendations without attorney review.</li>
+<li>Regulated high-risk advice without customer counsel validation.</li>
+<li>Unsupervised filing/submission to courts, regulators, or counterparties.</li>
+</ul>
+<h2>Product principles</h2>
+<ul>
+<li>AI drafts; lawyers decide.</li>
+<li>Every assertion should be traceable to a document source or playbook rule.</li>
+<li>If the document does not say it, the system says “not specified.”</li>
+<li>Risk labels are configurable by customer, not universal legal truth.</li>
+<li>The product should reduce review time without reducing professional accountability.</li>
+</ul>
+<h2>Demo narrative</h2>
+<p>“Upload an NDA. Helix extracts the key terms, compares it to your approved playbook, flags non-standard confidentiality term, broad residuals language, missing data protection terms, and non-mutual obligations, then drafts proposed redlines. The commercial counsel reviews the issue list, edits two recommendations, approves the memo, and exports a negotiation briefing for sales.”</p>
+<h2>Pricing hypothesis</h2>
+<ul>
+<li>Starter pilot: $1,500–$3,000/month, 3–5 users, limited document volume, one playbook.</li>
+<li>Team: $4,000–$8,000/month, 10–25 users, multiple playbooks, SSO/audit exports.</li>
+<li>Firm package: per-seat plus matter-volume tier, with client workspace separation.</li>
+</ul>
+<h2>Success metrics</h2>
+<ul>
+<li>First-pass review time reduced by 40–70% on selected agreement types.</li>
+<li>90%+ of extracted key fields accepted or lightly edited by reviewers.</li>
+<li>70%+ of AI issue classifications accepted by reviewers after playbook tuning.</li>
+<li>Median time from intake to lawyer-ready memo under 10 minutes for standard docs.</li>
+<li>Zero unapproved external legal-advice outputs in pilot.</li>
+</ul>
+<hr>
+<p>Document owner: Helix Labs / Helix Legal AI  </p>
+<p>Status: Draft for founder, counsel, and pilot-customer review  </p>
+<p>Last updated: 2026-05-12</p>
+</body>
+</html>
